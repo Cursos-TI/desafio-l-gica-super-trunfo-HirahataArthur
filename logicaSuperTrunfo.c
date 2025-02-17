@@ -113,16 +113,20 @@ int main() {
     if (resposta == 1){
 
         
-        printf("Qual propriedade gostaria de comparar?\n"); 
-        printf("População (digite 1), PIB (Digite 2)\n");
-        printf("Área (digite 3), Densidade Populacional (digite 4)\n");
-        printf("PIB per Capita (Digite 5), Números de pontos turísticos (Digite 6)\n");
+        printf("\nQual propriedade gostaria de comparar?\n"); 
+        printf("População (digite 1)\n");
+        printf("PIB (Digite 2)\n");
+        printf("Área (digite 3)\n");
+        printf("Densidade Populacional (digite 4)\n");
+        printf("PIB per Capita (Digite 5)\n");
+        printf("Números de pontos turísticos (Digite 6)\n");
         printf("Super Poder (Digite 7)\n");
         getchar();
         scanf("%d", &resposta2);
 
-
-        if(resposta2 ==1){
+        switch (resposta2)
+        {
+        case 1:
             if (pop > pop2)
             {
                 printf("\n\nRESULTADOS\n\n");
@@ -137,104 +141,69 @@ int main() {
                 printf("A cidade  de %s leva vantagem sobre a cidade de %s em população. \n", nome_ci2, nome_ci);
                 printf("Habitantes da cidade de %s: %d \n Habitantes da cidade de %s: %d\n\n", nome_ci2, pop2, nome_ci, pop);
             }
-            
+        
             //comparação População //////////////////////////////////////
-        }
-
-        if (resposta2 == 3)
-        {
-            if (area > area2)
-            {
-                printf("A cidade  de %s leva vantagem sobre a cidade de %s em área territorial.\n", nome_ci, nome_ci2);
-                printf("Área territorial da cidade de %s: \n %.2fkm²\n", nome_ci, area);
-                printf("Área territorial da cidade de %s: \n %.2fkm²\n\n", nome_ci2, area2);
-            } if (area == area2)
-            {
-                printf("Ambas as cidades possuem a mesma área territorial\n");
-                printf("Área de ambas as cidades:\n %.2fkm²\n\n", area);
-            }else{
-                printf("A cidade  de %s leva vantagem sobre a cidade de %s em área territorial.\n", nome_ci2, nome_ci);
-                printf("Área territorial da cidade de %s: \n %.2fkm²\n", nome_ci2, area2);
-                printf("Área territorial da cidade de %s: \n %.2fkm²\n\n", nome_ci, area);
-            }
-           
-            // comparação área //////////////////////////////////////
-        } 
-
-        if (resposta2 == 2)
-        {
+            break;
+        case 2:
             if (pib > pib2)
             {
+                printf("\n\nRESULTADOS\n\n");
                 printf("A cidade de %s leva vantagem sobre a cidade de %s em seu PIB.\n", nome_ci, nome_ci2);
                 printf("PIB da cidade de %s: \n R$%.2f\n", nome_ci, pib);
                 printf("PIB da cidade de %s: \n R$%.2f\n\n", nome_ci2, pib2);
             }if (pib == pib2)
             {
+                printf("\n\nRESULTADOS\n\n");
                 printf("Ambas as cidades tem o mesmo valor de PIB\n");
                 printf("PIB de ambas as cidades: R$%.2f\n\n", pib);
             }else{
+                printf("\n\nRESULTADOS\n\n");
                 printf("A cidade de %s leva vantagem sobre a cidade de %s em seu PIB.\n", nome_ci2, nome_ci);
                 printf("PIB da cidade de %s: \n R$%.2f\n", nome_ci2, pib2);
                 printf("PIB da cidade de %s: \n R$%.2f\n\n", nome_ci, pib);
             }
             
             // comparação PIB ////////////////////////////////////////////////
-        } if (resposta2 == 5)
-        {
-            if (pib_per_capita > pib_per_capita2)
-            {
-                printf("A cidade de %s leva vantagem sobre a cidade de %s em PIB per Capita.\n", nome_ci, nome_ci2);
-                printf("PIB per Capita da cidade de %s: \n R$%.2f\n", nome_ci, pib_per_capita);
-                printf("PIB per Capita da cidade de %s: \n R$%.2f\n\n", nome_ci2, pib_per_capita2);
-            }if (pib_per_capita == pib_per_capita2)
-            {
-                printf("Ambas as cidades possuem o mesmo valor de PIB per Capita");
-                printf("PIB per Capita de ambas as cidades: \n R$%.2f\n\n", pib_per_capita);
-            }else
-            {
-                printf("A cidade de %s leva vantagem sobre a cidade de %s em seu PIB per Capita.\n", nome_ci2, nome_ci);
-                printf("PIB per Capita da cidade de %s: \n R$%.2f\n", nome_ci2, pib_per_capita2);
-                printf("PIB per Capita da cidade de %s: \n R$%.2f\n\n", nome_ci, pib_per_capita);
-            }
-            
-            // comparação PIB per Capita///////////////////////////////////////////////////
-        } 
         
-        if (resposta2 == 6)
-        {
-            if (pontos_tu > pontos_tu2)
+            break;
+        case 3:
+            if (area > area2)
             {
-                printf("A cidade de %s leva vantagem sobre a cidade de %s em número de pontos turísticos.\n", nome_ci, nome_ci2);
-                printf("Número de pontos turísticos da cidade de %s: \n %d\n", nome_ci, pontos_tu);
-                printf("Número de pontos turísticos da cidade de %s: \n %d\n\n", nome_ci2, pontos_tu2);
-            }if (pontos_tu == pontos_tu2)
+                printf("\n\nRESULTADOS\n\n");
+                printf("A cidade  de %s leva vantagem sobre a cidade de %s em área territorial.\n", nome_ci, nome_ci2);
+                printf("Área territorial da cidade de %s: \n %.2fkm²\n", nome_ci, area);
+                printf("Área territorial da cidade de %s: \n %.2fkm²\n\n", nome_ci2, area2);
+            } if (area == area2)
             {
-                printf("Ambas as cidades tem o mesmo número de pontos turísticos.\n");
-                printf("Número de pontos turísticos em ambas as cidades:\n %d\n\n", pontos_tu);
+                printf("\n\nRESULTADOS\n\n");
+                printf("Ambas as cidades possuem a mesma área territorial\n");
+                printf("Área de ambas as cidades:\n %.2fkm²\n\n", area);
             }else{
-                printf("A cidade de %s leva vantagem sobre a cidade de %s em número de pontos turísticos.\n", nome_ci2, nome_ci);
-                printf("Número de pontos turísticos da cidade de %s: \n %d\n", nome_ci2, pontos_tu2);
-                printf("Número de pontos turísticos da cidade de %s: \n %d\n\n", nome_ci, pontos_tu);
+                printf("\n\nRESULTADOS\n\n");
+                printf("A cidade  de %s leva vantagem sobre a cidade de %s em área territorial.\n", nome_ci2, nome_ci);
+                printf("Área territorial da cidade de %s: \n %.2fkm²\n", nome_ci2, area2);
+                printf("Área territorial da cidade de %s: \n %.2fkm²\n\n", nome_ci, area);
             }
-            
-            //comparação Pontos turísticos///////////////////////////
-        }
-
-        if (resposta2 == 4)
-        {
+        
+            // comparação área //////////////////////////////////////
+            break;
+        case 4:
             if (densidade_pop > densidade_pop2)
             {
+                printf("\n\nRESULTADOS\n\n");
                 printf("OBSERVAÇÃO: A cidade com MENOR densidade leva vantagem.\n");
                 printf("A cidade de %s leva vantagem sobre a cidadade de %s em densidade demográficaa.\n", nome_ci2, nome_ci);
                 printf("Densidade Populacional da cidade de %s: \n %.2f habitantes/km²\n", nome_ci2, densidade_pop2);
                 printf("Densidade Populacional da cidade de %s: \n %.2f habitantes/km²\n\n", nome_ci, densidade_pop);
             }if (densidade_pop == densidade_pop2)
             {
+                printf("\n\nRESULTADOS\n\n");
                 printf("OBSERVAÇÃO: A cidade com MENOR densidade leva vantagem.\n");
                 printf("Ambas as cidades possuem o mesmo valor de Densidade Populacional");
                 printf("Densidade Populacional de ambas as cidades: \n %.2f habitantes/km²\n\n",  densidade_pop);
                 
             }else{
+                printf("\n\nRESULTADOS\n\n");
                 printf("OBSERVAÇÃO: A cidade com MENOR densidade leva vantagem.\n");
                 printf("A cidade de %s leva vantagem sobre a cidadade de %s em Densidade Populacional.\n", nome_ci, nome_ci2);
                 printf("Densidade Populacional da cidade de %s: \n %.2f habitantes/km²\n", nome_ci, densidade_pop);
@@ -242,49 +211,85 @@ int main() {
             }
             
             //comparação densidade populacional ///////////////////////////////////////////////////
-        }
-
-        if (resposta2 == 7)
-        {
-            if (super_poder > super_poder2)
+        break;
+        case 5:
+            if (pib_per_capita > pib_per_capita2)
             {
-                printf("O Super Poder da cidade de %s leva vantagem sobre a cidade de %s.\n", nome_ci, nome_ci2);
-                printf("Valor do Super Poder da cidade de %s: \n %.2f\n", nome_ci, super_poder);
-                printf("Valor do Super Poder da cidade de %s: \n %.2f\n\n", nome_ci2, super_poder2);
-            }if (super_poder == super_poder2)
+                printf("\n\nRESULTADOS\n\n");
+                printf("A cidade de %s leva vantagem sobre a cidade de %s em PIB per Capita.\n", nome_ci, nome_ci2);
+                printf("PIB per Capita da cidade de %s: \n R$%.2f\n", nome_ci, pib_per_capita);
+                printf("PIB per Capita da cidade de %s: \n R$%.2f\n\n", nome_ci2, pib_per_capita2);
+            }if (pib_per_capita == pib_per_capita2)
             {
-                printf("Ambas as cidades possuem o mesmo valor de Super Poder.");
-                printf("Valor do Super Poder de ambas as cidades: \n %.2f\n\n", super_poder);
-            }else{
-                printf("O Super Poder da cidade de %s leva vantagem sobre a cidade de %s.\n", nome_ci2, nome_ci);
-                printf("Valor do Super Poder da cidade de %s: \n %.2f\n", nome_ci2, super_poder2);
-                printf("Valor do Super Poder da cidade de %s: \n %.2f\n\n", nome_ci, super_poder);
+                printf("\n\nRESULTADOS\n\n");
+                printf("Ambas as cidades possuem o mesmo valor de PIB per Capita");
+                printf("PIB per Capita de ambas as cidades: \n R$%.2f\n\n", pib_per_capita);
+            }else
+            {
+                printf("\n\nRESULTADOS\n\n");
+                printf("A cidade de %s leva vantagem sobre a cidade de %s em seu PIB per Capita.\n", nome_ci2, nome_ci);
+                printf("PIB per Capita da cidade de %s: \n R$%.2f\n", nome_ci2, pib_per_capita2);
+                printf("PIB per Capita da cidade de %s: \n R$%.2f\n\n", nome_ci, pib_per_capita);
             }
             
-            //comparação entre o super poder das cartas///////////////////////////////////////////////
-        }    
-            
-            
-            
-            
-            
-            
-            
-            
+            // comparação PIB per Capita///////////////////////////////////////////////////
 
-            
-            
-            
+        break;
+        case 6:
 
+            if (pontos_tu > pontos_tu2)
+            {
+                printf("\n\nRESULTADOS\n\n");
+                printf("A cidade de %s leva vantagem sobre a cidade de %s em número de pontos turísticos.\n", nome_ci, nome_ci2);
+                printf("Número de pontos turísticos da cidade de %s: \n %d\n", nome_ci, pontos_tu);
+                printf("Número de pontos turísticos da cidade de %s: \n %d\n\n", nome_ci2, pontos_tu2);
+            }if (pontos_tu == pontos_tu2)
+            {
+                printf("\n\nRESULTADOS\n\n");
+                printf("Ambas as cidades tem o mesmo número de pontos turísticos.\n");
+                printf("Número de pontos turísticos em ambas as cidades:\n %d\n\n", pontos_tu);
+            }else{
+                printf("\n\nRESULTADOS\n\n");
+                printf("A cidade de %s leva vantagem sobre a cidade de %s em número de pontos turísticos.\n", nome_ci2, nome_ci);
+                printf("Número de pontos turísticos da cidade de %s: \n %d\n", nome_ci2, pontos_tu2);
+                printf("Número de pontos turísticos da cidade de %s: \n %d\n\n", nome_ci, pontos_tu);
+            }
+            
+            //comparação Pontos turísticos///////////////////////////
+
+        break;
+        case 7:
+            if (super_poder > super_poder2)
+                {
+                    printf("\n\nRESULTADOS\n\n");
+                    printf("O Super Poder da cidade de %s leva vantagem sobre a cidade de %s.\n", nome_ci, nome_ci2);
+                    printf("Valor do Super Poder da cidade de %s: \n %.2f\n", nome_ci, super_poder);
+                    printf("Valor do Super Poder da cidade de %s: \n %.2f\n\n", nome_ci2, super_poder2);
+                }if (super_poder == super_poder2)
+                {
+                    printf("\n\nRESULTADOS\n\n");
+                    printf("Ambas as cidades possuem o mesmo valor de Super Poder.");
+                    printf("Valor do Super Poder de ambas as cidades: \n %.2f\n\n", super_poder);
+                }else{
+                    printf("\n\nRESULTADOS\n\n");
+                    printf("O Super Poder da cidade de %s leva vantagem sobre a cidade de %s.\n", nome_ci2, nome_ci);
+                    printf("Valor do Super Poder da cidade de %s: \n %.2f\n", nome_ci2, super_poder2);
+                    printf("Valor do Super Poder da cidade de %s: \n %.2f\n\n", nome_ci, super_poder);
+                }
+                
+                //comparação entre o super poder das cartas///////////////////////////////////////////////
+        break;
+        default:
+                printf("Resposta invalida\n");
+            break;
+        }
+          
     }
     if (resposta == 0)
     {
-        printf("Programa encerrado");
+        printf("Programa encerrado\n");
     }else{
-        printf("Programa encerrado");
-    }
-    
-            return 0;
-
-    
+        printf("\nPrograma encerrado\n");
+    } 
+            return 0; 
 }
